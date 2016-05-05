@@ -37,7 +37,7 @@ app.on('ready', function () {
         y: mainWindowState.y,
         width: mainWindowState.width < 1280 ? 1280 : mainWindowState.width,
         height: mainWindowState.height < 600 ? 600 : mainWindowState.height,
-        title: 'Koel',
+        title: app.getName(),
         titleBarStyle: 'hidden-inset',
         fullscreenable: false,
         minHeight: 600,
@@ -62,7 +62,7 @@ app.on('ready', function () {
             label: 'Application',
             submenu: [
                 { label: 'Reload', accelerator: 'CmdOrCtrl+R', click: function() { mainWindow.reload(); } },
-                { label: 'About Koel', click: function () { mainWindow.webContents.send('cmd', 'ShowAboutPanel'); } },
+                { label: 'About ' + app.getName(), click: function () { mainWindow.webContents.send('cmd', 'ShowAboutPanel'); } },
                 { type: 'separator' },
                 { label: 'Quit', accelerator: 'Command+Q', click: function() { app.quit(); }}
             ]
@@ -118,7 +118,7 @@ app.on('ready', function () {
                 buttons: ['Yes', 'Not Really'],
                 defaultId: 0,
                 title: 'One second…',
-                message: 'Sure you want to quit Koel?',
+                message: 'Sure you want to quit ' + app.getName() + '?',
             });
 
             if (choice !== 0) {
