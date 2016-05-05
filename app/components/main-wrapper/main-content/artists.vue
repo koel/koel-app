@@ -2,7 +2,7 @@
     <section id="artistsWrapper">
         <h1 class="heading">
             <span>Artists</span>
-            <view-mode-switch :mode.sync="viewMode" :for="'artists'"></view-mode-switch>
+            <view-mode-switch :mode.sync="viewMode" for="artists"></view-mode-switch>
         </h1>
 
         <div class="artists main-scroll-wrap as-{{ viewMode }}" v-el:wrapper @scroll="scrolling">
@@ -10,7 +10,7 @@
                 | filterBy q in 'name'
                 | limitBy numOfItems" :artist="item"></artist-item>
 
-            <span class="item" v-for="n in 6"></span>
+            <span class="item filler" v-for="n in 6"></span>
         </div>
     </section>
 </template>

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-    import _ from 'lodash';
+    import { invokeMap } from 'lodash';
     import $ from 'jquery';
 
     import lyrics from './lyrics.vue';
@@ -67,7 +67,7 @@
             resetState() {
                 this.currentView = 'lyrics';
                 this.song = songStore.stub;
-                _.invoke(this.$refs, 'resetState');
+                invokeMap(this.$refs, 'resetState');
             },
         },
 

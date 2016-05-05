@@ -62,18 +62,18 @@
             <section class="top-artists" v-show="topArtists.length">
                 <h1>Top Artists</h1>
 
-                <div class="wrapper">
+                <div class="wrapper as-{{ preferences.artistsViewMode }}">
                     <artist-item v-for="artist in topArtists" :artist="artist"></artist-item>
-                    <span class="item" v-for="n in 3"></span>
+                    <span class="item filler" v-for="n in 3"></span>
                 </div>
             </section>
 
-            <section class="top-albums" v-show="topAlbums.length">
+            <section class="top-albums as-{{ preferences.albumsViewMode }}" v-show="topAlbums.length">
                 <h1>Top Albums</h1>
 
                 <div class="wrapper">
                     <album-item v-for="album in topAlbums" :album="album"></album-item>
-                    <span class="item" v-for="n in 3"></span>
+                    <span class="item filler" v-for="n in 3"></span>
                 </div>
             </section>
         </div>
@@ -81,7 +81,7 @@
 </template>
 
 <script>
-    import _ from 'lodash';
+    import { sample } from 'lodash';
 
     import playback from '../../../services/playback';
     import songStore from '../../../stores/song';
@@ -89,6 +89,7 @@
     import artistStore from '../../../stores/artist';
     import userStore from '../../../stores/user';
     import queueStore from '../../../stores/queue';
+    import preferenceStore from '../../../stores/preference';
 
     import albumItem from '../../shared/album-item.vue';
     import artistItem from '../../shared/artist-item.vue';
@@ -113,12 +114,14 @@
                 topSongs: [],
                 topAlbums: [],
                 topArtists: [],
+
+                preferences: preferenceStore.state,
             };
         },
 
         computed: {
             greeting() {
-                return _.sample(this.greetings).replace('%s', userStore.current.name);
+                return sample(this.greetings).replace('%s', userStore.current.name);
             },
         },
 

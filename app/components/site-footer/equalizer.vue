@@ -44,7 +44,7 @@
     /*eslint-disable no-unused-vars*/
     require('rangeslider.js/dist/rangeslider.css');
 
-    import _ from 'lodash';
+    import { map } from 'lodash';
     import $ from 'jquery';
     import rangeslider from 'rangeslider.js';
 
@@ -212,7 +212,7 @@
              * Save the current user's equalizer preferences into local storage.
              */
             save() {
-                equalizerStore.set(this.preampGainValue, _.pluck(this.bands, 'filter.gain.value'));
+                equalizerStore.set(this.preampGainValue, map(this.bands, 'filter.gain.value'));
             },
         },
 

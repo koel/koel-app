@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { extend, has, clone } from 'lodash';
 
 import electron from 'electron';
 const ipc = electron.ipcRenderer;
@@ -34,7 +34,7 @@ export default {
         }
 
         this.storeKey = `preferences_${user.id}`;
-        _.extend(this.state, ls.get(this.storeKey, this.state));
+        extend(this.state, ls.get(this.storeKey, this.state));
 
         this.updateMainProcess();
     },
@@ -45,7 +45,7 @@ export default {
     },
 
     get(key) {
-        return _.has(this.state, key) ? this.state[key] : null;
+        return has(this.state, key) ? this.state[key] : null;
     },
 
     save() {
@@ -60,6 +60,6 @@ export default {
     updateMainProcess() {
         // We send the preferences to the main process as a cloned object, as the original is filled with
         // getters/setters due to Vue's reactivity and can't be JSON-serialized.
-        ipc.send('PreferenceSaved', _.clone(this.state));
+        ipc.send('PreferenceSaved', clone(this.state));
     },
 };

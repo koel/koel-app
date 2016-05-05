@@ -62,7 +62,7 @@
 </template>
 
 <script>
-    import _ from 'lodash';
+    import { find, invokeMap, filter, map } from 'lodash';
     import $ from 'jquery';
 
     import songItem from './song-item.vue';
@@ -221,7 +221,7 @@
             getComponentBySongId(id) {
                 // A Vue component can be removed (as a result of filter for example), so we check for its $el as well.
                 if (!this.componentCache[id] || !this.componentCache[id].$el) {
-                    this.componentCache[id] = _.find(this.$refs.rows, { song: { id } });
+                    this.componentCache[id] = find(this.$refs.rows, { song: { id } });
                 }
 
                 return this.componentCache[id];
@@ -237,7 +237,7 @@
                     return;
                 }
 
-                _.invoke(this.$refs.rows, 'select');
+                invokeMap(this.$refs.rows, 'select');
                 this.gatherSelected();
             },
 
@@ -247,8 +247,8 @@
              * @return {Array.<Object>} An array of Song objects
              */
             gatherSelected() {
-                const selectedRows = _.where(this.$refs.rows, { selected: true });
-                const ids = _.map(selectedRows, row => row.song.id);
+                const selectedRows = filter(this.$refs.rows, { selected: true });
+                const ids = map(selectedRows, row => row.song.id);
 
                 this.selectedSongs = songStore.byIds(ids);
             },
@@ -312,7 +312,7 @@
              * Clear the current selection on this song list.
              */
             clearSelection() {
-                _.invoke(this.$refs.rows, 'deselect');
+                invokeMap(this.$refs.rows, 'deselect');
                 this.gatherSelected();
             },
 
@@ -335,7 +335,7 @@
                 this.$nextTick(() => {
                     // We can opt for something like application/x-koel.text+plain here to sound fancy,
                     // but forget it.
-                    const songIds = _.pluck(this.selectedSongs, 'id');
+                    const songIds = map(this.selectedSongs, 'id');
                     e.dataTransfer.setData('text/plain', songIds);
                     e.dataTransfer.effectAllowed = 'move';
 
