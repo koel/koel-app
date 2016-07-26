@@ -29,7 +29,7 @@
     "lodash": "^4.0.0",
     "node-sass": "^3.4.2",
     "nprogress": "^0.2.0",
-    "plyr": "^1.5.16",
+    "plyr": "1.5.x",
     "rangeslider.js": "^2.1.1",
     "vue": "^1.0.17",
     "vue-clickaway": "^1.1.1",
