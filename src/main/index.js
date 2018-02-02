@@ -34,6 +34,7 @@ const createWindow = () => {
     y: mainWindowState.y,
     width: mainWindowState.width < MIN_WINDOW_WIDTH ? MIN_WINDOW_WIDTH : mainWindowState.width,
     height: mainWindowState.height < MIN_WINDOW_HEIGHT ? MIN_WINDOW_HEIGHT : mainWindowState.height,
+    fullscreenable: false,
     titleBarStyle: 'hiddenInset',
     minHeight: MIN_WINDOW_HEIGHT,
     minWidth: MIN_WINDOW_WIDTH,
