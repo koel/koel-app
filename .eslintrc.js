@@ -8,7 +8,7 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: 'standard',
+  extends: 'vue',
   globals: {
     __static: true,
     KOEL_ENV: true
