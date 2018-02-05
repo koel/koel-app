@@ -6,7 +6,7 @@ export default win => {
       label: 'Application',
       submenu: [
         { label: 'Reload', accelerator: 'CmdOrCtrl+R', click: () => win.reload() },
-        { label: `About Koel`, click: () => win.webContents.send('cmd', 'ShowAboutPanel') },
+        { label: 'About Koel', click: () => win.webContents.send('cmd', 'ShowAboutPanel') },
         { type: 'separator' },
         { label: 'Quit', accelerator: 'Command+Q', click: () => app.quit() }
       ]
