@@ -39,8 +39,12 @@ const createWindow = () => {
     minHeight: MIN_WINDOW_HEIGHT,
     minWidth: MIN_WINDOW_WIDTH,
     autoHideMenuBar: true,
-    darkTheme: true
+    darkTheme: true,
+    show: false,
+    backgroundColor: '#181818'
   })
+
+  mainWindow.once('ready-to-show', () => mainWindow.show())
 
   if (mainWindowState.isMaximized) {
     mainWindow.maximize()
