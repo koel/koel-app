@@ -1,0 +1,4 @@
+export default {
+  DOWNLOAD: 'DOWNLOAD',
+  SHOW_ABOUT_PANEL: 'SHOW_ABOUT_PANEL'
+}

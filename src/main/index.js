@@ -4,6 +4,7 @@ import { app, BrowserWindow, globalShortcut } from 'electron'
 import windowStateKeeper from 'electron-window-state'
 import createMenu from './createMenu'
 import registerGlobalShortcuts from './registerGlobalShortcuts'
+import listenToEvents from './listenToEvents'
 
 const MIN_WINDOW_WIDTH = 1280
 const MIN_WINDOW_HEIGHT = 640
@@ -63,6 +64,7 @@ app.on('ready', () => {
   createWindow()
   createMenu(mainWindow)
   registerGlobalShortcuts(mainWindow)
+  listenToEvents()
 })
 
 app.on('window-all-closed', () => {

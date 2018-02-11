@@ -56,6 +56,7 @@
     "alertify.js": "^1.0.12",
     "axios": "^0.16.1",
     "blueimp-md5": "^2.3.0",
+    "electron-dl": "^1.11.0",
     "intersection-observer": "^0.2.0",
     "ismobilejs": "^0.4.0",
     "local-storage": "^1.4.2",
