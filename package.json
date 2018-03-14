@@ -53,6 +53,7 @@
     }
   },
   "dependencies": {
+    "@phanan/vuebus": "phanan/vuebus",
     "alertify.js": "^1.0.12",
     "axios": "^0.16.1",
     "blueimp-md5": "^2.3.0",

@@ -26,6 +26,10 @@
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/7zip/-/7zip-0.0.6.tgz#9cafb171af82329490353b4816f03347aa150a30"
 
+"@phanan/vuebus@phanan/vuebus":
+  version "1.0.0"
+  resolved "https://codeload.github.com/phanan/vuebus/tar.gz/8a6a4836a4e2a2b6737d7402d087cdde59e253f3"
+
 "@types/node@^7.0.18":
   version "7.0.52"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.52.tgz#8990d3350375542b0c21a83cd0331e6a8fc86716"
