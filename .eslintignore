@@ -1,1 +1,3 @@
+node_modules
 /src/renderer/js/libs
+/src/renderer/js/tests/__coverage__
