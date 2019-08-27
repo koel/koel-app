@@ -11,7 +11,8 @@ module.exports = {
   extends: 'vue',
   globals: {
     __static: true,
-    KOEL_ENV: true
+    KOEL_ENV: true,
+    NODE_ENV: true
   },
   plugins: [
     'html'

@@ -129,7 +129,8 @@ let rendererConfig = {
         : false
     }),
     new webpack.DefinePlugin({
-      KOEL_ENV: '"app"'
+      KOEL_ENV: '"app"',
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
