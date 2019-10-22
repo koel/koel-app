@@ -35,10 +35,10 @@
   version "1.0.0"
   resolved "https://codeload.github.com/phanan/vuebus/tar.gz/8a6a4836a4e2a2b6737d7402d087cdde59e253f3"
 
-"@types/node@^7.0.18":
-  version "7.0.52"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.52.tgz#8990d3350375542b0c21a83cd0331e6a8fc86716"
-  integrity sha512-jjpyQsKGsOF/wUElNjfPULk+d8PKvJOIXk3IUeBYYmNCy5dMWfrI+JiixYNw8ppKOlcRwWTXFl0B+i5oGrf95Q==
+"@types/node@^8.0.24":
+  version "8.10.55"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.55.tgz#3951a64ebce1927b050fd1e420dc6f332be8a1e0"
+  integrity sha512-iZeh1EgupfmAAOASk580R1SL5lWF3CsBVgVH0395qyNF8fhO16xy1UwAav2PdGxIIsYRn7RzJgMGjdsvam6YYg==
 
 abbrev@1, abbrev@^1.0.7:
   version "1.1.1"
@@ -3352,12 +3352,12 @@ electron-window-state@^4.1.1:
     jsonfile "^2.2.3"
     mkdirp "^0.5.1"
 
-electron@^1.7.5:
-  version "1.7.11"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-1.7.11.tgz#993b6aa79e0e79a7cfcc369f4c813fbd9a0b08d9"
-  integrity sha1-mTtqp54OeafPzDafTIE/vZoLCNk=
+electron@^1.8.8:
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-1.8.8.tgz#a90cddb075291f49576993e6f5c8bb4439301cae"
+  integrity sha512-1f9zJehcTTGjrkb06o6ds+gsRq6SYhZJyxOk6zIWjRH8hVy03y/RzUDELzNas71f5vcvXmfGVvyjeEsadDI8tg==
   dependencies:
-    "@types/node" "^7.0.18"
+    "@types/node" "^8.0.24"
     electron-download "^3.0.1"
     extract-zip "^1.0.3"
 
